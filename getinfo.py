@@ -40,6 +40,8 @@ def main():
     device = DeviceInfo("testdev")
     device.get_memory_info()
     device.get_cpu_info()
+    if not os.path.exists('/opt'):
+        os.makedirs('/opt')
     filename='/opt/'+device.name+'.pid'
     device.get_pid(filename)
 
